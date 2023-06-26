@@ -10,13 +10,13 @@ const persistConfig = {
 
 const contactSlice = createSlice({
   name: 'contact',
-  initialState: {cont: []},
+  initialState: {contact: []},
   reducers: {
     addContact(state, action) { 
-      return {cont: [...state.cont, action.payload]}
+      return {contact: [...state.contact, action.payload]}
     },
     deleteContact(state, action) {
-      return {cont: state.cont.filter(item => item.id !== action.payload)}
+      return {contact: state.contact.filter(item => item.id !== action.payload)}
     }
   }
 })
@@ -36,5 +36,5 @@ export const filterSlice = createSlice({
 export const { addContact, deleteContact } = contactSlice.actions;
 export const { chengeFilter } = filterSlice.actions;
 
-export const getContacts = state => state.contacts.cont;
+export const getContacts = state => state.contacts.contact;
 export const getFilter = state => state.filter;
